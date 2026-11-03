@@ -1,0 +1,40 @@
+%PDF-1.4
+1 0 obj <</Type /Catalog /Pages 2 0 R>> endobj
+2 0 obj <</Type /Pages /Kids [3 0 R] /Count 1>> endobj
+3 0 obj <</Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources <</Font <</F1 5 0 R>>>>>> endobj
+4 0 obj <</Length 1277>>
+stream
+BT /F1 10 Tf
+1 0 0 1 50 750 Tm (INDUSENSE SYNTHETIC MAINTENANCE MANUAL \(DISTRACTOR CORPUS\)) Tj
+1 0 0 1 50 736 Tm (DOCUMENT ID: SYNTH-MAN-CHUCK-018) Tj
+1 0 0 1 50 722 Tm (TITLE: Pneumatic Chuck Clamp Calibration & Pressure System Manual) Tj
+1 0 0 1 50 708 Tm (STATUS: SYNTHETIC DISTRACTOR -- SEMANTIC PROXIMITY FALLACY BENCHMARK) Tj
+1 0 0 1 50 694 Tm () Tj
+1 0 0 1 50 680 Tm (SECTION 2: WORKHOLDING PRESSURE EQUALIZATION) Tj
+1 0 0 1 50 666 Tm (Pneumatic and hydraulic workpiece clamping fixtures maintain workpiece concentricity.) Tj
+1 0 0 1 50 652 Tm (Ambient air pressure and low-velocity cycling require calibration checks.) Tj
+1 0 0 1 50 638 Tm () Tj
+1 0 0 1 50 624 Tm (SECTION 5.4: LOW-SPEED AIR PRESSURE REGULATION) Tj
+1 0 0 1 50 610 Tm (When ambient air delta falls below threshold during low-speed tooling cycles, clamping force ) Tj
+1 0 0 1 50 596 Tm (decay may occur. Technicians must inspect pneumatic line PL-04, adjust regulator valve RV-204, ) Tj
+1 0 0 1 50 582 Tm (and recalibrate chuck hydraulic clamps to 45 bar before spindle restart.) Tj
+1 0 0 1 50 568 Tm () Tj
+1 0 0 1 50 554 Tm (NOTE: This procedure applies strictly to workpiece retention chucks and has NO relation ) Tj
+1 0 0 1 50 540 Tm (to spindle motor stator cooling.) Tj
+1 0 0 1 50 526 Tm () Tj
+ET
+endstream
+endobj
+5 0 obj <</Type /Font /Subtype /Type1 /BaseFont /Helvetica>> endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000227 00000 n 
+0000000300 00000 n 
+trailer <</Size 6 /Root 1 0 R>>
+startxref
+370
+%%EOF

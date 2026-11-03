@@ -1,0 +1,112 @@
+{
+  "model_id": "paderborn_bearing_classifier",
+  "domain": "bearing",
+  "dataset_name": "Paderborn Bearing Datacenter",
+  "is_synthetic": false,
+  "algorithm": "Calibrated HistGradientBoosting Bearing Classifier",
+  "version": "2.0.0",
+  "trained_at": "2026-10-31T12:09:37.866587+00:00",
+  "validation_strategy": "Grouped split by physical bearing identity (zero window leakage)",
+  "bearings": {
+    "train": [
+      "K001",
+      "K002",
+      "K003",
+      "K004",
+      "KA01",
+      "KA03",
+      "KA05",
+      "KA06",
+      "KA07",
+      "KA08",
+      "KA09",
+      "KI01",
+      "KI03",
+      "KI04",
+      "KI05",
+      "KI07",
+      "KI08"
+    ],
+    "val": [
+      "K005",
+      "KA15",
+      "KA16",
+      "KI14",
+      "KI18"
+    ],
+    "test": [
+      "K006",
+      "KA04",
+      "KA22",
+      "KA30",
+      "KI21"
+    ],
+    "held_out_mixed": [
+      "KB23",
+      "KB24",
+      "KB27"
+    ]
+  },
+  "sample_counts": {
+    "train": 340,
+    "val": 100,
+    "test": 100
+  },
+  "test_metrics": {
+    "accuracy": 0.56,
+    "macro_f1": 0.4968,
+    "multiclass_brier": 0.5899,
+    "classes": [
+      "Healthy",
+      "Outer Ring Damage",
+      "Inner Ring Damage"
+    ],
+    "confusion_matrix": [
+      [
+        20,
+        0,
+        0
+      ],
+      [
+        6,
+        36,
+        18
+      ],
+      [
+        0,
+        20,
+        0
+      ]
+    ],
+    "calibration_status": "Calibrated (Sigmoid / Platt scaling on validation bearing fold)"
+  },
+  "features": [
+    "vib_rms",
+    "vib_peak",
+    "vib_p2p",
+    "vib_kurtosis",
+    "vib_skewness",
+    "vib_crest_factor",
+    "vib_shape_factor",
+    "vib_fft_peak_freq",
+    "vib_spectral_energy",
+    "cur1_rms",
+    "cur1_peak",
+    "cur1_p2p",
+    "cur1_kurtosis",
+    "cur1_skewness",
+    "cur1_crest_factor",
+    "cur1_shape_factor",
+    "cur1_fft_peak_freq",
+    "cur1_spectral_energy",
+    "cur2_rms",
+    "cur2_peak",
+    "cur2_p2p",
+    "cur2_kurtosis",
+    "cur2_skewness",
+    "cur2_crest_factor",
+    "cur2_shape_factor",
+    "cur2_fft_peak_freq",
+    "cur2_spectral_energy"
+  ]
+}

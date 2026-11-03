@@ -1,0 +1,35 @@
+ABB INDUSTRIAL MOTOR M-102 MAINTENANCE & TROUBLESHOOTING GUIDE
+Document ID: DOC-ABB-M102-V2
+Section: 4.0 Maintenance & Operating Standards
+
+1. OPERATING TEMPERATURE & THERMAL LIMITS
+1.1 Normal Operating Range:
+    - Ambient air temperature: 295 K - 303 K (22°C - 30°C)
+    - Maximum process temperature limit: 312 K (39°C)
+    - Winding temperature warning threshold: 358 K (85°C)
+
+1.2 Thermal Overload Protection (HDF):
+    - Heat Dissipation Failure (HDF) occurs when process temperature exceeds ambient by > 8.6 K and rotational speed is below 1380 RPM.
+    - Recommended Inspection: Clean cooling fins, verify intake fan operation, check ventilation airflow.
+
+2. TROUBLESHOOTING PROCEDURES FOR MOTOR OVERHEATING (ERROR E102)
+2.1 Symptoms:
+    - Motor housing temperature exceeds 80°C
+    - Thermal sensor alarm E102 triggered on PLC dashboard
+    - Increased acoustic noise and vibration in front bearing housing
+
+2.2 Possible Causes:
+    - Cause A: Blocked cooling fan intake or accumulated dust on cooling fins.
+    - Cause B: Excessive rotational load / tool wear > 200 min leading to Overstrain Failure (OSF).
+    - Cause C: Insufficient or degraded synthetic grease in drive-end bearing.
+
+2.3 Recommended Action Sequence:
+    Step 1: Safely halt unit M-102 and lock out electrical power.
+    Step 2: Inspect intake fan shroud for foreign objects and clean cooling fins using compressed air.
+    Step 3: Measure drive-end bearing temperature and inspect grease seal for leakage.
+    Step 4: Check cutting tool wear level; replace cutting tool if wear exceeds 200 min limit.
+    Step 5: Measure winding insulation resistance with megohmmeter before restarting.
+
+3. PREDICTIVE MAINTENANCE & SENSOR ALERTS
+- Power Failure (PWF): Triggered when torque * rotational speed exceeds 9,000 W or falls below 110 W.
+- Tool Wear Failure (TWF): Triggered when cumulative tool wear reaches 200-240 minutes.

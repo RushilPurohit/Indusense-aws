@@ -1,0 +1,194 @@
+================================================================================
+                    INDUSENSE — HOW TO RUN THE PROJECT
+   Confidence-Aware & Evidence-Grounded Predictive Maintenance Platform
+================================================================================
+
+1. PROJECT OVERVIEW
+--------------------------------------------------------------------------------
+InduSense re-architects industrial maintenance into a single connected pipeline:
+    PREDICT -> RETRIEVE -> ALIGN -> VALIDATE -> ADAPT -> EXPLAIN
+
+Every screen is a view onto ONE shared object: the DIAGNOSIS CASE.
+The system connects physical sensor telemetry (AI4I 2020, Factory Sensors,
+UCI Hydraulic Rig, Paderborn Bearing Datacenter) with technical manuals and
+knowledge graphs, specifically detecting and blocking "Semantic Proximity Fallacies"
+(when naive RAG retrieves text with matching words like "air delta" or "pressure"
+that target the wrong physical machine subsystem).
+
+InduSense is configured to run out-of-the-box with ZERO AWS credentials:
+- Local disk storage adapter (mocking S3)
+- Local layout & PyPDF parser (mocking AWS Textract)
+- Local Scikit-Learn/XGBoost predictor (mocking SageMaker)
+- In-memory dense cosine vector & graph index (mocking OpenSearch)
+- Local template explanation synthesizer (mocking Bedrock)
+- Deterministic rule router (mocking AWS Lambda)
+- Frontend fallback mock adapter if backend is ever paused
+
+
+2. CRITICAL: DIRECTORY & PATH RULES
+--------------------------------------------------------------------------------
+ALWAYS execute backend and seed commands from the project root directory:
+    C:\Users\RUSHIL\Desktop\Deep Learning\Project\ABB Hackathon\abb-maintenance-intelligence
+
+DO NOT cd into `backend\app`!
+Running commands like `python -m uvicorn server.main:app` from `backend\app` will cause:
+    ModuleNotFoundError: No module named 'server'
+or
+    FileNotFoundError: [Errno 2] No such file or directory: 'seed.py'
+
+Because `server/` and `seed.py` are located directly in the root directory:
+    ABB Hackathon\abb-maintenance-intelligence
+
+
+3. PREREQUISITES
+--------------------------------------------------------------------------------
+- Python: Version 3.10, 3.11, 3.12, or 3.13 (Installed and on PATH)
+- Node.js & npm: Node.js 18+ (Node 22 or 24 LTS recommended)
+- Operating System: Windows, macOS, or Linux
+
+
+4. FAST START (SINGLE-COMMAND RUNNER)
+--------------------------------------------------------------------------------
+From this directory (`abb-maintenance-intelligence`):
+    python run_indusense.py
+
+This automatically:
+1. Runs seed.py to load Hero Cases, Fleet Assets, and Synthetic Manuals
+2. Starts the FastAPI Backend on http://localhost:8000
+3. Starts the Vite Frontend Dev Server on http://localhost:5173
+4. Proxies all API requests from the frontend to the backend seamlessly.
+
+Open your browser to:
+    Web Application:   http://localhost:5173
+    API Swagger Docs:  http://localhost:8000/docs
+
+
+5. MANUAL STEP-BY-STEP RUN (INDIVIDUAL TERMINALS)
+--------------------------------------------------------------------------------
+If you prefer running the backend and frontend in separate terminals:
+
+--- TERMINAL 1: FASTAPI BACKEND ---
+1. Open PowerShell and go to the project root:
+   cd "C:\Users\RUSHIL\Desktop\Deep Learning\Project\ABB Hackathon\abb-maintenance-intelligence"
+
+2. Seed the database with assets, cases, and technical manuals:
+   python seed.py
+
+3. Launch FastAPI backend:
+   python -m uvicorn server.main:app --host 127.0.0.1 --port 8000 --reload
+
+   Verify backend health:
+   curl http://localhost:8000/health
+   Response: {"status":"healthy","service":"InduSense Intelligence Engine","mode":"LOCAL_ZERO_AWS_CREDENTIALS","version":"2.0.0"}
+
+
+--- TERMINAL 2: VITE REACT FRONTEND ---
+1. Open PowerShell and go to the frontend directory:
+   cd "C:\Users\RUSHIL\Desktop\Deep Learning\Project\ABB Hackathon\abb-maintenance-intelligence\frontend"
+
+2. Install dependencies (if needed):
+   npm.cmd install
+
+3. Start development server:
+   npm.cmd run dev
+
+4. Open browser to:
+   http://localhost:5173
+
+
+6. AUTHENTICATION & ROLE-BASED ACCESS (THE 3 PANELS)
+--------------------------------------------------------------------------------
+InduSense provides 3 distinct role profiles with auto-fill preset cards on the Login page:
+
+Panel A) LEAD RELIABILITY ENGINEER (Audit Authority)
+  - Email:    engineer@indusense.ai
+  - Password: engineer123   (or InduSense2026!)
+  - Role Authority: High-confidence diagnosis audit, ML model retraining, cloud router
+    configuration, and evidence alignment sign-off.
+  - Granted Panels: Model Training & Evaluation, Case Workspace (Triage), Cloud Router
+    (Light/Heavy), Knowledge Ingestion.
+
+Panel B) TECHNICIAN (Review Sign-Off)
+  - Email:    technician@indusense.ai
+  - Password: technician123 (or InduSense2026!)
+  - Role Authority: Field inspection triage, sensor telemetry verification, physical repair
+    review, and work order sign-off.
+  - Granted Panels: Field Triage & Cases, Sensor Telemetry Inspection, Technician Review
+    Sign-Off, Work Order Records.
+
+Panel C) SYSTEM ADMINISTRATOR (Full Architecture)
+  - Email:    admin@indusense.ai
+  - Password: admin123      (or InduSense2026!)
+  - Role Authority: Complete platform access, security & access control, model registry
+    governance, diagnostics, and database management.
+  - Granted Panels: Full Platform Access, Security & Access Control, Model Registry Admin,
+    Diagnostics & DB Backup.
+
+* On the Login page (`/login`), click any role card to automatically populate credentials!
+* On the Sign Up page (`/signup`), choose between the 3 official role authorities.
+
+
+7. NEW KEY FEATURES
+--------------------------------------------------------------------------------
+1. OPEN MANUAL DEFECT PARTS SPECIFICATION:
+   - In any Case Workspace (`/cases/:id`), click the blue "Open Manual Defect Parts" button
+     in the top header or directly in the condition card.
+   - Opens an interactive technical modal displaying:
+     * Full OEM Maintenance Manual excerpt with highlighted technical steps
+     * Component Disassembly Schematic with physical labels (e.g. CF-02 Radiator, BPFO Bearing)
+     * Defect Parts Specifications table (Part IDs, OEM Part Numbers, Stock Status, Lead Times)
+     * Step-by-Step Inspection & Overhaul procedure
+     * "Dispatch Field Work Order" button with automatic audit event recording
+
+2. RESEARCH FRAMEWORK & BENCHMARK:
+   - Streamlined 2-tab view:
+     * Tab 1: Model Training & Evaluation (Live ML datasets, training runs, model cards)
+     * Tab 2: Architectural Benchmark Comparison (DL-only vs Plain RAG vs InduSense CEA)
+
+3. MODEL EVALUATION DASHBOARD & FIGURES:
+   - Interactive diagnostic visualizations for all 4 physical domains:
+     * Figure 1: Feature Attribution & Sensor Weights (Horizontal bar charts for Gini / SHAP)
+     * Figure 2: Probability Calibration Reliability Diagram (SVG curve with 45° ideal line,
+       raw uncalibrated ECE vs calibrated Platt curve)
+     * Figure 3: Subsystem Precision, Recall & F1 Breakdown bars
+     * Figure 4: Test Confusion Matrix Heatmap (True vs Predicted counts)
+
+4. FOUR GENUINE TRAINED ML PIPELINES:
+   - Milling (AI4I 2020): HistGradientBoosting with CalibratedClassifierCV (97.7% Acc, ECE 0.0070)
+   - Pump (Factory Sensors): Chronological rolling sensor features with failure forecast (91.1% Acc)
+   - Hydraulic Rig (UCI): 102 cycle-level statistical features predicting 4 subsystems (Cooler 100%)
+   - Bearing (Paderborn): Physical bearing leave-out validation (Zero window leakage)
+
+
+8. RUNNING UNIT & PIPELINE TESTS
+--------------------------------------------------------------------------------
+Execute the complete pytest test suite:
+    cd "C:\Users\RUSHIL\Desktop\Deep Learning\Project\ABB Hackathon\abb-maintenance-intelligence"
+    pytest tests/ -v
+
+All 19 test cases verify:
+- AI4I Heat Dissipation Failure physical trigger rules
+- Condition-Evidence Alignment (CEA) and semantic distractor rejection
+- Multi-confidence reliability fusion (Pc, Rc, Oc, CEA)
+- Confidence-aware cloud routing (LIGHT, STANDARD, HEAVY escalation)
+- Predictor service genuine ML inference across telemetry inputs
+- Versioned technician review audit logging
+
+
+9. TROUBLESHOOTING
+--------------------------------------------------------------------------------
+Q: PowerShell shows error "ModuleNotFoundError: No module named 'server'"?
+A: You are in `backend\app`. Run `cd ..\..` to return to `abb-maintenance-intelligence`, then run:
+   python -m uvicorn server.main:app --host 127.0.0.1 --port 8000 --reload
+
+Q: PowerShell shows error "npm.ps1 cannot be loaded because running scripts is disabled"?
+A: Execute npm using 'npm.cmd' instead:
+   npm.cmd run dev
+
+Q: Backend shows warnings about Qdrant or Neo4j?
+A: This is normal in local mode. InduSense uses in-memory and SQLite fallback adapters with
+   zero Docker dependencies.
+
+================================================================================
+                    INDUSENSE — READY FOR PRESENTATION
+================================================================================

@@ -1,0 +1,12 @@
+dataset_paths:
+  ai4i: "ml/datasets/ai4i/ai4i2020.csv"
+hyperparameters:
+  epochs: 50
+  batch_size: 64
+  learning_rate: 0.001
+  hidden_size: 128
+  num_layers: 2
+model_architecture:
+  classifier: "xgboost"
+output:
+  checkpoint_dir: "ml/checkpoints/maintenance"

@@ -1,0 +1,9 @@
+dataset_paths:
+  tablebank: "ml/datasets/tablebank"
+model_name: "microsoft/table-transformer-detection"
+hyperparameters:
+  epochs: 15
+  batch_size: 8
+  learning_rate: 0.0001
+output:
+  checkpoint_dir: "ml/checkpoints/table"

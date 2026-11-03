@@ -1,0 +1,27 @@
+INDUSENSE SYNTHETIC MAINTENANCE MANUAL
+DOCUMENT ID: SYNTH-MAN-CNC-004
+TITLE: Industrial Spindle Cooling Circuit & Thermal Dissipation Manual
+STATUS: SYNTHETIC DATASET — RESEARCH FRAMEWORK ONLY
+
+SECTION 1: SYSTEM OVERVIEW
+The 5-axis high-speed milling spindle employs a closed-loop ethylene glycol cooling circuit 
+rated for continuous duty up to 24,000 RPM. Auxiliary heat exchangers dissipate stator and 
+bearing thermal losses into the ambient bay atmosphere.
+
+SECTION 4.2: HEAT DISSIPATION FAILURE (HDF) DIAGNOSTIC PROCEDURE
+Trigger Criteria:
+- Air Temperature: Ambient sensor T_air
+- Process Temperature: Stator jacket sensor T_proc
+- Rotational Speed: Spindle encoder N_rpm
+
+CRITICAL ANOMALY RULE:
+When the temperature difference [T_proc - T_air] falls below 8.6 Kelvin while the rotational 
+speed remains below 1380 RPM, the system is in Heat Dissipation Failure (HDF) condition. 
+Under low rotational velocity, reduced fan blade forced convection leads to thermal saturation.
+
+MANDATORY CORRECTIVE ACTIONS:
+1. Immediately disengage spindle drive and lock out main 400V breaker.
+2. Inspect auxiliary cooling fan CF-02 for mechanical binding or blade debris accumulation.
+3. Remove and wash suction filter mesh SF-12 using neutral solvent.
+4. Verify glycol coolant line flow rate exceeds nominal 4.2 L/min threshold.
+5. Record inspection sign-off before restarting spindle sequence.

@@ -1,0 +1,19 @@
+INDUSENSE SYNTHETIC MAINTENANCE MANUAL
+DOCUMENT ID: SYNTH-MAN-BRG-024
+TITLE: PRONOSTIA Roller Bearing Degradation & Lubrication Standards
+STATUS: SYNTHETIC DATASET — RESEARCH FRAMEWORK ONLY
+
+SECTION 3: ROLLER BEARING VIBRATION SIGNATURES
+Outer race spalling manifests through repetitive shock pulses at Ball Pass Frequency Outer Race:
+BPFO = (N_balls / 2) * (1 - (d_roller / D_pitch) * cos(contact_angle)) * shaft_frequency.
+For benchmark speed 1800 RPM, BPFO modulates at 108.4 Hz.
+
+SECTION 6.1: DEGRADATION THRESHOLDS & STAGE-3 SPALLING
+Condition Criteria:
+- Horizontal Vibration Kurtosis > 4.5
+- Envelope Spectrum Modulation at 108 Hz > 14 dB
+- Crest Factor > 4.0
+
+ACTION PROTOCOL:
+Denotes Stage-3 subsurface fatigue spalling. Immediately inspect grease contamination level. 
+If metal particulates are identified on magnetic drain plug, schedule bearing cartridge replacement.

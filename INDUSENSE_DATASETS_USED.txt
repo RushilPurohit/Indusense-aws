@@ -1,0 +1,325 @@
+InduSense - Datasets Used
+=========================
+
+Project:
+Multimodal Maintenance Intelligence Agent for Industrial Troubleshooting
+
+The datasets are used for different parts of the system. They are not forced
+into one model.
+
+1. AI4I 2020 Predictive Maintenance Dataset
+   Local data:
+   data/ai4i+2020+predictive+maintenance+dataset/ai4i2020.csv
+
+   Used for:
+   - Industrial machine-failure prediction
+   - Sensor-based predictive maintenance
+   - Heat Dissipation Failure (HDF), Power Failure (PWF), Tool Wear Failure
+     (TWF), and Overstrain Failure (OSF)
+
+   Main inputs:
+   Air temperature, process temperature, rotational speed, torque, and tool
+   wear.
+
+   InduSense output:
+   Predicted fault, condition probability (Pc), sensor contribution, and
+   recommended inspection.
+
+2. NASA C-MAPSS Turbofan Engine Dataset
+   Local/project reference:
+   NASA C-MAPSS / CMAPSSData.zip
+
+   Used for:
+   - Turbofan engine degradation
+   - Remaining Useful Life (RUL) prediction
+   - Engine health trend analysis
+
+   InduSense output:
+   Estimated RUL, RUL interval, degradation condition, and engineering
+   escalation when supporting manual evidence is unavailable.
+
+3. FEMTO / PRONOSTIA Bearing Dataset
+   Local/project reference:
+   Datasets/Bearing/
+
+   Used for:
+   - Bearing degradation analysis
+   - Vibration-based fault classification
+   - Spectral feature analysis
+
+   Main features:
+   Vibration, kurtosis, crest factor, FFT peak, and envelope-spectrum
+   indicators.
+
+   InduSense output:
+   Bearing fault condition, confidence score, spectral indicators, and
+   maintenance evidence.
+
+4. Paderborn Bearing Dataset
+   Used for:
+   - Additional bearing-fault validation
+   - Physical bearing leave-out evaluation
+   - Testing generalization of the bearing classifier
+
+   InduSense output:
+   Bearing health classification and vibration-based evidence.
+
+5. Factory Sensors Failure Labels Dataset
+   Local data:
+   Datasets/factory-sensors-failure-labels (1)/
+
+   Used for:
+   - Industrial sensor-failure labels
+   - Supporting fault-detection experiments
+   - Testing sensor-to-condition mappings
+
+6. Condition Monitoring of Hydraulic Systems Dataset
+   Local data:
+   Datasets/condition+monitoring+of+hydraulic+systems/
+
+   Used for:
+   - Hydraulic-system condition monitoring
+   - Pressure and sensor-based fault analysis
+   - Testing hydraulic equipment diagnostics
+
+7. Synthetic Maintenance Manuals Corpus
+   Local project data:
+   documents/
+   server/documents/
+
+   Used for:
+   - Technical-document retrieval
+   - Evidence passages for case diagnosis
+   - Citation-backed troubleshooting explanations
+   - Condition-Evidence Alignment (CEA)
+   - Distractor and semantic-proximity conflict detection
+
+   InduSense output:
+   Retrieved passage, document, page number, bounding-box metadata, citation,
+   alignment verdict, and evidence confidence.
+
+8. DocLayNet
+   Source:
+   https://github.com/DS4SD/DocLayNet
+
+   Used for:
+   - Document-layout understanding
+   - Detecting text, titles, paragraphs, tables, figures, captions, and lists
+
+9. TableBank
+   Source:
+   https://github.com/doc-analysis/TableBank
+
+   Used for:
+   - Table detection
+   - Table structure extraction
+   - Error-code tables, specification tables, and troubleshooting grids
+
+10. FUNSD
+    Used for:
+    - Noisy scanned-document understanding
+    - OCR and form/key-value extraction
+    - Text-region and entity relationships
+
+11. PubLayNet
+    Used for:
+    - Document-layout analysis
+    - Supporting layout recognition for technical documents
+
+12. SROIE
+    Used for:
+    - OCR and document information extraction
+    - Testing extraction from scanned documents and structured forms
+
+13. IIIT5K-Words
+    Used for:
+    - OCR text-recognition experiments
+    - Word-level recognition evaluation
+
+Dataset-to-System Mapping
+=========================
+
+AI4I 2020                  -> Fault prediction and sensor reasoning
+NASA C-MAPSS               -> Turbofan degradation and RUL prediction
+FEMTO / PRONOSTIA          -> Bearing vibration and degradation analysis
+Paderborn Bearing          -> Bearing classifier validation
+Factory Sensors            -> Industrial sensor-failure experiments
+Hydraulic Systems          -> Hydraulic condition monitoring
+Maintenance Manuals        -> Retrieval, citations, and troubleshooting
+DocLayNet / PubLayNet      -> Document-layout understanding
+TableBank                  -> Table detection and extraction
+FUNSD / SROIE / IIIT5K     -> OCR and scanned-document understanding
+
+Important Note
+==============
+
+AI4I 2020, NASA C-MAPSS, and bearing datasets are used for predictive
+maintenance demonstrations. The document-understanding datasets support the
+OCR, layout, and table-processing components. A dataset is only used for the
+task it is appropriate for.
+
+Actual Dataset Folder Analysis
+==============================
+
+Folder analyzed:
+C:\Users\RUSHIL\Desktop\Deep Learning\Project\ABB Hackathon\Datasets
+
+The folder currently contains approximately 5.72 GB across 115 files:
+
+- 3 ZIP archives
+- 30 RAR bearing archives
+- 54 MAT bearing files
+- 6 CSV files
+- 21 TXT files
+- 1 PDF reference file
+- 1 JSON file
+- 1 Markdown file
+- 1 SQL file
+
+Datasets confirmed as physically present
+----------------------------------------
+
+1. AI4I 2020
+   Location:
+   Datasets/ai4i+2020+predictive+maintenance+dataset/
+
+   Confirmed:
+   - 1 CSV file: ai4i2020.csv
+   - 10,000 rows
+   - 14 columns
+   - 339 machine-failure rows
+   - HDF: 115 rows
+   - PWF: 95 rows
+   - TWF: 46 rows
+   - OSF: 98 rows
+   - RNF: 19 rows
+
+2. FEMTO / PRONOSTIA bearing data
+   Location:
+   Datasets/Bearing/
+
+   Confirmed:
+   - 30 RAR archives
+   - 54 extracted MAT files under Bearing/cache_mats/
+   - Bearing identifiers include K, KA, KB, and KI groups
+   - The file names encode operating condition, fault type, bearing ID, and
+     measurement/run information
+
+   Recommended use:
+   Bearing degradation, vibration feature extraction, FFT/envelope features,
+   and bearing-fault classifier validation.
+
+   Limitation:
+   The RAR archives should be extracted and indexed before claiming complete
+   bearing-dataset coverage. The current MAT cache is only a partial extracted
+   view of the archive collection.
+
+3. Condition Monitoring of Hydraulic Systems
+   Location:
+   Datasets/condition+monitoring+of+hydraulic+systems/
+
+   Confirmed:
+   - 2,205 instances
+   - 43,680 attributes per cycle
+   - 20 TXT files
+   - Raw multivariate time-series data
+   - Pressure, motor-power, flow, temperature, vibration, efficiency, and
+     cooling sensors
+   - Profile labels for cooler, valve, pump leakage, accumulator, and stable
+     flag conditions
+   - No missing values according to the supplied documentation
+
+   Recommended use:
+   Hydraulic condition classification, severity regression, sensor-fault
+   analysis, and multirate time-series feature extraction.
+
+   Important processing note:
+   The files are tab-delimited matrices, not ordinary row-wise CSV tables.
+   The 100 Hz pressure/power signals, 10 Hz flow signals, and 1 Hz signals
+   should be resampled or converted into engineered features before combining
+   them in a standard ML model.
+
+4. Factory Sensors with Failure Labels
+   Location:
+   Datasets/factory-sensors-failure-labels (1)/
+
+   Confirmed:
+   - 1 site
+   - 6 assets
+   - 52,560 hourly sensor readings
+   - 39 failure events
+   - 63 work orders
+   - 1.7% of readings are labelled as failing within 24 hours
+   - 10 of 10 supplied integrity checks pass
+   - Sensor fields include vibration, bearing temperature, motor current,
+     discharge pressure, rotor speed, degradation stage, RUL hours,
+     next-24-hour failure, and next failure mode
+
+   Observed next-failure labels:
+   - bearing_wear: 253
+   - seal_leak: 253
+   - electrical_fault: 161
+   - overheating: 138
+   - imbalance: 92
+
+   Observed degradation stages:
+   - healthy: 29,843
+   - degrading: 14,453
+   - critical: 7,656
+   - stopped: 608
+
+   Recommended use:
+   RUL regression, next-24-hour failure classification, failure-mode
+   classification, work-order analysis, and asset-level time-series splits.
+
+5. PDF reference artifact
+   File:
+   Datasets/093168a92d25cc46_pdf_preview_medium (1).pdf
+
+   This is a PDF reference/preview artifact. It was not treated as a tabular
+   predictive-maintenance dataset because its contents were not machine-read
+   during this inventory.
+
+Not physically present in this folder
+--------------------------------------
+
+The following datasets are named in the project requirements or documentation,
+but no matching files were found in the Datasets folder during this analysis:
+
+- NASA C-MAPSS / CMAPSSData.zip
+- NASA Prognostics Center of Excellence repository files
+- DocLayNet
+- TableBank
+- FUNSD
+- PubLayNet
+- SROIE
+- IIIT5K-Words
+- Paderborn Bearing as a separately identified download
+
+These datasets may exist elsewhere in the workspace, inside another archive,
+or only as planned integrations. They must not be reported as locally loaded
+until their files are added and indexed.
+
+Recommended modeling split
+---------------------------
+
+- AI4I: stratified train/validation/test split, preserving rare failure labels.
+- Factory sensors: chronological, asset-aware split to avoid leakage from
+  adjacent hourly readings and repaired assets.
+- Hydraulic system: cycle-aware split; keep profile labels aligned with each
+  60-second cycle.
+- Bearing: bearing-ID or operating-condition leave-one-group-out split;
+  never randomly split overlapping windows from the same recording across
+  train and test.
+
+Data-quality risks to address
+-----------------------------
+
+- Severe class imbalance exists in AI4I and factory failure labels.
+- Random row splits can leak temporal or asset identity information.
+- Hydraulic files have multiple sampling rates and very high dimensionality.
+- Bearing archives are mixed between compressed RAR and extracted MAT files.
+- The project currently references NASA C-MAPSS, but it is not present in the
+  analyzed folder.
+- Document-understanding datasets are not locally available in this folder, so
+  OCR/layout/table model training cannot be verified from this inventory alone.

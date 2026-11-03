@@ -1,0 +1,64 @@
+{
+  "model_id": "factory_pump_failure_predictor",
+  "domain": "pump",
+  "dataset_name": "Factory Sensors with Failure Labels",
+  "is_synthetic": true,
+  "algorithm": "HistGradientBoosting Classifier + Regressor Suite",
+  "version": "2.0.0",
+  "trained_at": "2026-10-31T12:09:02.210523+00:00",
+  "sample_counts": {
+    "train": 35917,
+    "val": 7678,
+    "test": 7634
+  },
+  "test_metrics": {
+    "failure_next_24h": {
+      "accuracy": 0.976,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.8867,
+      "brier_score": 0.022,
+      "ece": 0.005,
+      "calibration_status": "Calibrated (Sigmoid / Platt scaling on chronological validation fold)"
+    },
+    "degradation_stage": {
+      "accuracy": 0.9107,
+      "macro_f1": 0.8517,
+      "classes": [
+        "NORMAL",
+        "EARLY",
+        "MODERATE",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    "rul_regression": {
+      "mae_hours": 214.98,
+      "rmse_hours": 289.02,
+      "r2_score": -0.2243
+    }
+  },
+  "features": [
+    "vibration_mm_s",
+    "bearing_temp_c",
+    "motor_current_a",
+    "discharge_pressure_bar",
+    "rotor_speed_rpm",
+    "vibration_mm_s_roll_mean_6h",
+    "bearing_temp_c_roll_mean_6h",
+    "motor_current_a_roll_mean_6h",
+    "discharge_pressure_bar_roll_mean_6h",
+    "rotor_speed_rpm_roll_mean_6h",
+    "vibration_mm_s_roll_std_6h",
+    "bearing_temp_c_roll_std_6h",
+    "motor_current_a_roll_std_6h",
+    "discharge_pressure_bar_roll_std_6h",
+    "rotor_speed_rpm_roll_std_6h",
+    "vibration_mm_s_roll_max_6h",
+    "bearing_temp_c_roll_max_6h",
+    "motor_current_a_roll_max_6h",
+    "discharge_pressure_bar_roll_max_6h",
+    "rotor_speed_rpm_roll_max_6h"
+  ]
+}

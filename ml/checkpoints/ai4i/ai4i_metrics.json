@@ -1,0 +1,63 @@
+{
+  "model_id": "ai4i_milling_failure_classifier",
+  "domain": "milling",
+  "dataset_name": "AI4I 2020 Predictive Maintenance",
+  "is_synthetic": true,
+  "algorithm": "Calibrated HistGradientBoosting Classifier",
+  "version": "2.0.0",
+  "trained_at": "2026-11-01T12:13:50.795128+00:00",
+  "sample_counts": {
+    "train": 7000,
+    "val": 1500,
+    "test": 1500
+  },
+  "test_metrics": {
+    "accuracy": 0.9933,
+    "precision": 0.9556,
+    "recall": 0.8431,
+    "f1_score": 0.8958,
+    "roc_auc": 0.9876,
+    "brier_score": 0.0055,
+    "ece": 0.007,
+    "calibration_status": "Calibrated (Sigmoid / Platt scaling on validation fold)",
+    "confusion_matrix": [
+      [
+        1447,
+        2
+      ],
+      [
+        8,
+        43
+      ]
+    ],
+    "failure_mode_f1s": {
+      "TWF": 0.0,
+      "HDF": 1.0,
+      "PWF": 0.8182,
+      "OSF": 0.9677,
+      "RNF": 0.0
+    }
+  },
+  "feature_importances": {
+    "Type": 0.1111,
+    "Air temperature [K]": 0.1111,
+    "Process temperature [K]": 0.1111,
+    "Rotational speed [rpm]": 0.1111,
+    "Torque [Nm]": 0.1111,
+    "Tool wear [min]": 0.1111,
+    "temp_diff": 0.1111,
+    "power_w": 0.1111,
+    "wear_torque": 0.1111
+  },
+  "features": [
+    "Type",
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]",
+    "temp_diff",
+    "power_w",
+    "wear_torque"
+  ]
+}

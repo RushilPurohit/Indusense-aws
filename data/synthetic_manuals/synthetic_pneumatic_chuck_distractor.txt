@@ -1,0 +1,16 @@
+INDUSENSE SYNTHETIC MAINTENANCE MANUAL (DISTRACTOR CORPUS)
+DOCUMENT ID: SYNTH-MAN-CHUCK-018
+TITLE: Pneumatic Chuck Clamp Calibration & Pressure System Manual
+STATUS: SYNTHETIC DISTRACTOR — SEMANTIC PROXIMITY FALLACY BENCHMARK
+
+SECTION 2: WORKHOLDING PRESSURE EQUALIZATION
+Pneumatic and hydraulic workpiece clamping fixtures maintain workpiece concentricity.
+Ambient air pressure and low-velocity cycling require calibration checks.
+
+SECTION 5.4: LOW-SPEED AIR PRESSURE REGULATION
+When ambient air delta falls below threshold during low-speed tooling cycles, clamping force 
+decay may occur. Technicians must inspect pneumatic line PL-04, adjust regulator valve RV-204, 
+and recalibrate chuck hydraulic clamps to 45 bar before spindle restart.
+
+NOTE: This procedure applies strictly to workpiece retention chucks and has NO relation 
+to spindle motor stator cooling.

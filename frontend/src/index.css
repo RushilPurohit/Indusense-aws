@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-slate-900 bg-canvas-bg antialiased font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* JetBrains Mono and tabular numbers for telemetry, IDs, scores, timestamps */
+  .font-mono, code, kbd, samp, pre, .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Smooth scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-300;
+  }
+}
+
+@layer components {
+  /* Precision Industrial Intelligence Component Styles */
+  .indusense-card {
+    @apply bg-white border border-slate-200 rounded-card shadow-card;
+  }
+
+  .indusense-well-dark {
+    @apply bg-chrome-well border border-chrome-border rounded-card text-white;
+  }
+
+  .indusense-header-dark {
+    @apply bg-chrome-header text-white border-b border-chrome-toolbar;
+  }
+
+  .indusense-toolbar-dark {
+    @apply bg-chrome-toolbar text-white border-b border-chrome-border;
+  }
+
+  .confidence-chip-high {
+    @apply font-mono text-xs px-2 py-0.5 rounded border border-status-healthy text-emerald-800 bg-status-healthyBg;
+  }
+
+  .confidence-chip-med {
+    @apply font-mono text-xs px-2 py-0.5 rounded border border-status-warning text-amber-800 bg-status-warningBg;
+  }
+
+  .confidence-chip-low {
+    @apply font-mono text-xs px-2 py-0.5 rounded border border-status-critical text-rose-800 bg-status-criticalBg;
+  }
+
+  .critical-row {
+    @apply bg-rose-50/60 border-l-[3px] border-l-status-critical;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E1 transparent;
+  }
+}

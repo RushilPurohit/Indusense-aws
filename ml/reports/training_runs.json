@@ -1,0 +1,79 @@
+[
+  {
+    "run_id": "run-de38180d",
+    "domain": "milling",
+    "dataset": "AI4I 2020 Predictive Maintenance",
+    "algorithm": "HistGradientBoosting",
+    "status": "Queued",
+    "started_at": "2026-11-01T17:18:28Z",
+    "completed_at": null,
+    "accuracy": null,
+    "error": null
+  },
+  {
+    "run_id": "run-de725b14",
+    "domain": "milling",
+    "dataset": "AI4I 2020 Predictive Maintenance",
+    "algorithm": "HistGradientBoosting",
+    "status": "Queued",
+    "started_at": "2026-11-01T17:18:26Z",
+    "completed_at": null,
+    "accuracy": null,
+    "error": null
+  },
+  {
+    "run_id": "run-71f6c2a9",
+    "domain": "milling",
+    "dataset": "AI4I 2020 Predictive Maintenance",
+    "algorithm": "1D-CNN",
+    "status": "Queued",
+    "started_at": "2026-11-01T16:16:30Z",
+    "completed_at": null,
+    "accuracy": null,
+    "error": null
+  },
+  {
+    "run_id": "run-af6e30cb",
+    "domain": "milling",
+    "dataset": "AI4I 2020 Predictive Maintenance",
+    "algorithm": "HistGradientBoosting",
+    "status": "Queued",
+    "started_at": "2026-11-01T10:56:37Z",
+    "completed_at": null,
+    "accuracy": null,
+    "error": null
+  },
+  {
+    "run_id": "run-3fd272a3",
+    "domain": "milling",
+    "dataset": "AI4I 2020 Predictive Maintenance",
+    "algorithm": "HistGradientBoosting",
+    "status": "Queued",
+    "started_at": "2026-11-01T09:32:09Z",
+    "completed_at": null,
+    "accuracy": null,
+    "error": null
+  },
+  {
+    "run_id": "run-78b41341",
+    "domain": "milling",
+    "dataset": "AI4I 2020 Predictive Maintenance",
+    "algorithm": "HistGradientBoosting",
+    "status": "Queued",
+    "started_at": "2026-11-01T06:08:07Z",
+    "completed_at": null,
+    "accuracy": null,
+    "error": null
+  },
+  {
+    "run_id": "run-master-001",
+    "domain": "all",
+    "dataset": "All 4 Machine Domains",
+    "algorithm": "HistGradientBoosting + Calibrated Sigmoid",
+    "status": "Completed",
+    "started_at": "2026-10-31T17:38:34Z",
+    "completed_at": "2026-10-31T17:39:40Z",
+    "accuracy": 0.8958,
+    "error": null
+  }
+]

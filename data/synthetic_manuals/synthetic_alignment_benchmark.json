@@ -1,0 +1,56 @@
+[
+  {
+    "id": "bench-001",
+    "condition": {
+      "asset_id": "CNC-M102",
+      "fault": "Heat Dissipation Failure (HDF)",
+      "telemetry": "Delta T = 8.1 K (< 8.6 K), Speed = 1320 rpm (< 1380 rpm)"
+    },
+    "candidate": {
+      "doc_id": "SYNTH-MAN-CNC-004",
+      "page": 42,
+      "passage": "When the temperature difference [T_proc - T_air] falls below 8.6 Kelvin while the rotational speed remains below 1380 RPM, the system is in Heat Dissipation Failure (HDF). Inspect cooling fan CF-02 and clean filter mesh SF-12.",
+      "component": "Spindle Cooling Circuit"
+    },
+    "applicable": true,
+    "label": "ALIGNED",
+    "ground_truth_cea": 0.96,
+    "reason": "Component, failure mode, and numeric rule match exactly."
+  },
+  {
+    "id": "bench-002",
+    "condition": {
+      "asset_id": "CNC-M102",
+      "fault": "Heat Dissipation Failure (HDF)",
+      "telemetry": "Delta T = 8.1 K (< 8.6 K), Speed = 1320 rpm (< 1380 rpm)"
+    },
+    "candidate": {
+      "doc_id": "SYNTH-MAN-CHUCK-018",
+      "page": 18,
+      "passage": "When ambient air delta falls below threshold during low-speed tooling cycles, adjust regulator valve RV-204 and recalibrate chuck hydraulic clamps to 45 bar before spindle restart.",
+      "component": "Workholding Pneumatic Chuck"
+    },
+    "applicable": false,
+    "label": "CONFLICT (SEMANTIC PROXIMITY DISTRACTOR)",
+    "ground_truth_cea": 0.21,
+    "reason": "Lexical overlap on ambient air delta and low-speed, but component is Pneumatic Chuck, completely unrelated to Spindle Cooling."
+  },
+  {
+    "id": "bench-003",
+    "condition": {
+      "asset_id": "BRG-301",
+      "fault": "Outer-Race Bearing Degradation",
+      "telemetry": "Kurtosis = 5.82 (> 4.5), Peak Frequency = 108.4 Hz"
+    },
+    "candidate": {
+      "doc_id": "SYNTH-MAN-BRG-024",
+      "page": 24,
+      "passage": "Horizontal Vibration Kurtosis > 4.5 and BPFO modulation at 108 Hz > 14 dB denotes Stage-3 subsurface fatigue spalling. Inspect grease and schedule cartridge replacement.",
+      "component": "Roller Bearing Cartridge"
+    },
+    "applicable": true,
+    "label": "ALIGNED",
+    "ground_truth_cea": 0.92,
+    "reason": "Matches outer race spalling harmonic (108 Hz) and kurtosis threshold (> 4.5)."
+  }
+]

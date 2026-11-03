@@ -1,0 +1,252 @@
+{
+  "version": "2.0.0",
+  "updated_at": "2026-10-31T12:09:38.196852+00:00",
+  "active_models": {
+    "milling": "ai4i_milling_failure_classifier",
+    "pump": "factory_pump_failure_predictor",
+    "hydraulic": "hydraulic_component_condition_predictor",
+    "bearing": "paderborn_bearing_classifier"
+  },
+  "models": {
+    "ai4i_milling_failure_classifier": {
+      "model_id": "ai4i_milling_failure_classifier",
+      "name": "AI4I Milling Calibrated Classifier",
+      "domain": "milling",
+      "dataset": "AI4I 2020 Predictive Maintenance",
+      "version": "2.0.0",
+      "status": "Trained",
+      "is_synthetic": true,
+      "artifact_path": "ml/checkpoints/ai4i/ai4i_pipeline.joblib",
+      "metrics": {
+        "accuracy": 0.9933,
+        "precision": 0.9556,
+        "recall": 0.8431,
+        "f1_score": 0.8958,
+        "roc_auc": 0.9876,
+        "brier_score": 0.0055,
+        "ece": 0.007,
+        "calibration_status": "Calibrated (Sigmoid / Platt scaling on validation fold)",
+        "confusion_matrix": [
+          [
+            1447,
+            2
+          ],
+          [
+            8,
+            43
+          ]
+        ],
+        "failure_mode_f1s": {
+          "TWF": 0.0,
+          "HDF": 1.0,
+          "PWF": 0.8182,
+          "OSF": 0.9677,
+          "RNF": 0.0
+        }
+      },
+      "trained_at": "2026-10-31T12:08:41.167419+00:00",
+      "calibration": "Validated (Sigmoid / Platt scaling)",
+      "accuracy": 0.9933
+    },
+    "factory_pump_failure_predictor": {
+      "model_id": "factory_pump_failure_predictor",
+      "name": "Factory Pump Predictor Suite",
+      "domain": "pump",
+      "dataset": "Factory Sensors with Failure Labels",
+      "version": "2.0.0",
+      "status": "Trained",
+      "is_synthetic": true,
+      "artifact_path": "ml/checkpoints/factory_sensors/factory_pump_pipeline.joblib",
+      "metrics": {
+        "failure_next_24h": {
+          "accuracy": 0.976,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "roc_auc": 0.8867,
+          "brier_score": 0.022,
+          "ece": 0.005,
+          "calibration_status": "Calibrated (Sigmoid / Platt scaling on chronological validation fold)"
+        },
+        "degradation_stage": {
+          "accuracy": 0.9107,
+          "macro_f1": 0.8517,
+          "classes": [
+            "NORMAL",
+            "EARLY",
+            "MODERATE",
+            "SEVERE",
+            "CRITICAL"
+          ]
+        },
+        "rul_regression": {
+          "mae_hours": 214.98,
+          "rmse_hours": 289.02,
+          "r2_score": -0.2243
+        }
+      },
+      "trained_at": "2026-10-31T12:09:02.210523+00:00",
+      "calibration": "Validated (Sigmoid / Platt scaling)",
+      "accuracy": 0.976
+    },
+    "hydraulic_component_condition_predictor": {
+      "model_id": "hydraulic_component_condition_predictor",
+      "name": "Hydraulic Component Condition Suite",
+      "domain": "hydraulic",
+      "dataset": "UCI Condition Monitoring of Hydraulic Systems",
+      "version": "2.0.0",
+      "status": "Trained",
+      "is_synthetic": false,
+      "artifact_path": "ml/checkpoints/hydraulic/hydraulic_components_pipeline.joblib",
+      "metrics": {
+        "cooler": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "classes": [
+            "Full Efficiency (100%)",
+            "Reduced Efficiency (20%)",
+            "Close to Failure (3%)"
+          ],
+          "confusion_matrix": [
+            [
+              331
+            ]
+          ]
+        },
+        "valve": {
+          "accuracy": 0.3505,
+          "macro_f1": 0.1298,
+          "classes": [
+            "Optimal Switching (100%)",
+            "Small Lag (90%)",
+            "Severe Lag (80%)",
+            "Close to Failure (73%)"
+          ],
+          "confusion_matrix": [
+            [
+              116,
+              0,
+              0,
+              0
+            ],
+            [
+              75,
+              0,
+              0,
+              0
+            ],
+            [
+              70,
+              0,
+              0,
+              0
+            ],
+            [
+              70,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pump": {
+          "accuracy": 0.7885,
+          "macro_f1": 0.7118,
+          "classes": [
+            "No Leakage (0)",
+            "Weak Leakage (1)",
+            "Severe Leakage (2)"
+          ],
+          "confusion_matrix": [
+            [
+              152,
+              0,
+              0
+            ],
+            [
+              7,
+              27,
+              63
+            ],
+            [
+              0,
+              0,
+              82
+            ]
+          ]
+        },
+        "accumulator": {
+          "accuracy": 0.429,
+          "macro_f1": 0.2001,
+          "classes": [
+            "Optimal Pressure (130 bar)",
+            "Slightly Reduced (115 bar)",
+            "Severely Reduced (100 bar)",
+            "Close to Failure (90 bar)"
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              56
+            ],
+            [
+              0,
+              0,
+              133
+            ],
+            [
+              0,
+              0,
+              142
+            ]
+          ]
+        }
+      },
+      "trained_at": "2026-10-31T12:09:23.959704+00:00",
+      "calibration": "Validated (Multi-Class HGB)",
+      "accuracy": 1.0
+    },
+    "paderborn_bearing_classifier": {
+      "model_id": "paderborn_bearing_classifier",
+      "name": "Paderborn Bearing Damage Classifier",
+      "domain": "bearing",
+      "dataset": "Paderborn Bearing Datacenter",
+      "version": "2.0.0",
+      "status": "Trained",
+      "is_synthetic": false,
+      "artifact_path": "ml/checkpoints/paderborn/paderborn_bearing_pipeline.joblib",
+      "metrics": {
+        "accuracy": 0.56,
+        "macro_f1": 0.4968,
+        "multiclass_brier": 0.5899,
+        "classes": [
+          "Healthy",
+          "Outer Ring Damage",
+          "Inner Ring Damage"
+        ],
+        "confusion_matrix": [
+          [
+            20,
+            0,
+            0
+          ],
+          [
+            6,
+            36,
+            18
+          ],
+          [
+            0,
+            20,
+            0
+          ]
+        ],
+        "calibration_status": "Calibrated (Sigmoid / Platt scaling on validation bearing fold)"
+      },
+      "trained_at": "2026-10-31T12:09:37.866587+00:00",
+      "calibration": "Validated (Sigmoid / Platt scaling on validation bearing fold)",
+      "accuracy": 0.56
+    }
+  }
+}

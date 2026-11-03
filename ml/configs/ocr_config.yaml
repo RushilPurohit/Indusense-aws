@@ -1,0 +1,9 @@
+dataset_paths:
+  funsd: "ml/datasets/funsd"
+model_name: "microsoft/trocr-base-printed"
+hyperparameters:
+  epochs: 10
+  batch_size: 16
+  learning_rate: 0.00005
+output:
+  checkpoint_dir: "ml/checkpoints/ocr"

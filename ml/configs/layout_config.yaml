@@ -1,0 +1,20 @@
+dataset_paths:
+  doclaynet: "ml/datasets/doclaynet"
+classes:
+  - "Caption"
+  - "Footnote"
+  - "Formula"
+  - "List-item"
+  - "Page-footer"
+  - "Page-header"
+  - "Picture"
+  - "Section-header"
+  - "Table"
+  - "Text"
+  - "Title"
+hyperparameters:
+  epochs: 20
+  batch_size: 16
+  image_size: 640
+output:
+  checkpoint_dir: "ml/checkpoints/layout"
