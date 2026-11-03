@@ -35,3 +35,10 @@ uploads/*
 .idea/
 .DS_Store
 Thumbs.db
+
+# Large datasets and pretrained model weights
+ml/datasets/sroie/layoutlm-base-uncased/pytorch_model.bin
+ml/datasets/cmapss/X_train.npy
+ml/datasets/cmapss/X_val.npy
+ml/datasets/doclaynet/DocLayNet-main.zip
+ml/datasets/publaynet/ICDAR_SLR_competition/final_test_set/test.json
